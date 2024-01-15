@@ -1,4 +1,4 @@
-package com.basicWeb.www;
+package com.basicWeb.www.Controller;
 
 import java.text.DateFormat;
 import java.util.Date;
