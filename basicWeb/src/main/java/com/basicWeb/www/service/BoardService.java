@@ -9,5 +9,7 @@ public interface BoardService {
 	void register(BoardVO bvo);
 
 	List<BoardVO> getList();
+
+	BoardVO getDetail(long bno);
 	
 }

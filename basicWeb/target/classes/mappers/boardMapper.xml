@@ -12,4 +12,8 @@
 	<select id="getList" resultType="com.basicWeb.www.domain.BoardVO">
 		SELECT * FROM board ORDER BY bno desc
 	</select>
+	
+	<select id="getDetail" resultType="com.basicWeb.www.domain.BoardVO">
+		SELECT * FROM board WHERE bno = #{bno}
+	</select>
 </mapper>

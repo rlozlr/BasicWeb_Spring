@@ -28,4 +28,10 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVO> getList() {
 		return bdao.getList();
 	}
+
+	@Override
+	public BoardVO getDetail(long bno) {
+		// TODO Auto-generated method stub
+		return bdao.getDetail(bno);
+	}
 }

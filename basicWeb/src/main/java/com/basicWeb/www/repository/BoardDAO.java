@@ -11,4 +11,6 @@ public interface BoardDAO {
 
 	List<BoardVO> getList();
 
+	BoardVO getDetail(long bno);
+
 }

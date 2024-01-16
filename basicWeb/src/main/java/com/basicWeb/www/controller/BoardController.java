@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.basicWeb.www.domain.BoardVO;
 import com.basicWeb.www.service.BoardService;
@@ -35,6 +36,11 @@ public class BoardController {
 	public void list (Model m) {
 		List<BoardVO> list = bsv.getList();
 		m.addAttribute("list", list);
+	}
+	
+	@GetMapping("/detail")
+	public void detail (Model m, @RequestParam("bno") long bno) {
+		m.addAttribute("bvo", bsv.getDetail(bno));
 	}
 	
 }
