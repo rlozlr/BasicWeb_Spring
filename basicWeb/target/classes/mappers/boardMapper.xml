@@ -5,4 +5,8 @@
 
 <mapper namespace="com.basicWeb.www.repository.BoardDAO">
 
+	<insert id="register">
+		insert into board (title, writer, content)
+		values (#{title}, #{writer}, #{content})
+	</insert>
 </mapper>

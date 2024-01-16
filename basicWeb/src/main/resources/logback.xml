@@ -3,21 +3,21 @@
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <!-- encoders are assigned the type
-         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default
     <encoder>
-    <!-- log를 간략화하여 간단히 보기 위해서 pattern 수정 -->
+    log를 간략화하여 간단히 보기 위해서 pattern 수정
       <pattern>%d %5p [%c] %msg%n</pattern>
     </encoder>
   </appender>
 
-<!-- 좀 더 자세한 로그를 찍기 위해서 패키지 별로 log 설정 -->
+좀 더 자세한 로그를 찍기 위해서 패키지 별로 log 설정
   <logger name="com.basicWeb.www" level="info" appender-ref="STDOUT"></logger>
   <logger name="org.springframework" level="info" appender-ref="STDOUT"></logger>
   <logger name="org.springframework.jdbc" level="info" appender-ref="STDOUT"></logger>
   <logger name="jdbc.sqlonly" level="info" appender-ref="STDOUT"></logger>
   <logger name="jdbc.resultsettable" level="info" appender-ref="STDOUT"></logger>
-<!-- debug 레벨은 너무 많은 정보가 출력되므로 info 레벨로 수정(간략화)  -->
+debug 레벨은 너무 많은 정보가 출력되므로 info 레벨로 수정(간략화) 
   <root level="info">
     <appender-ref ref="STDOUT" />
   </root>

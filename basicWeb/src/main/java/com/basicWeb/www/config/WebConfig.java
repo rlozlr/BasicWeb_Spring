@@ -41,10 +41,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	 * -> 404와 같은 Exception 처리 페이지 꾸미기 -> 나중에 설정
 	 */
 	//multipartConfig 추후 설정
-	@Override
-	protected void customizeRegistration(Dynamic registration) {
-		super.customizeRegistration(registration);
-	}
+//	@Override
+//	protected void customizeRegistration(Dynamic registration) {
+//		super.customizeRegistration(registration);
+//	}
 	
 	
 

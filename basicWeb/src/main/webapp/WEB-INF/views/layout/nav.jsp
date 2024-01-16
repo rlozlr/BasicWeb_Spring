@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- Bootstrap 내비게이션 바 -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">홈</a>
@@ -14,7 +13,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">글쓰기</a>
+          <a class="nav-link active" aria-current="page" href="/board/register">글쓰기</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">드림</a>

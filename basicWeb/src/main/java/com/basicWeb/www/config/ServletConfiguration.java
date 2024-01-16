@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.myweb.www.controller", "com.myweb.www.handler"}) 
+@ComponentScan(basePackages = {"com.basicWeb.www.controller", "com.basicWeb.www.handler"}) 
 public class ServletConfiguration implements WebMvcConfigurer {
 
 	// resources 경로 설정 / 나중에 파일 업로드 경로 설정 추가

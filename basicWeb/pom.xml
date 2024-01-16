@@ -120,7 +120,7 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${ch.qos.logback-version}</version>
-			<scope>test</scope>
+			
 		</dependency>	
 		<!-- log4jdbc -->
 		<!-- log4jdbc.log4j2.properties 로그 설정 파일 생성 필요 -->
