@@ -1,5 +1,7 @@
 package com.basicWeb.www.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.basicWeb.www.domain.BoardVO;
@@ -20,5 +22,10 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		bdao.register(bvo);
 		
+	}
+
+	@Override
+	public List<BoardVO> getList() {
+		return bdao.getList();
 	}
 }

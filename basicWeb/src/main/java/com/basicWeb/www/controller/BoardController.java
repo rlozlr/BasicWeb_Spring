@@ -1,6 +1,9 @@
 package com.basicWeb.www.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +29,12 @@ public class BoardController {
 	public String register(BoardVO bvo) {
 		bsv.register(bvo);
 		return "index";
+	}
+	
+	@GetMapping("/list")
+	public void list (Model m) {
+		List<BoardVO> list = bsv.getList();
+		m.addAttribute("list", list);
 	}
 	
 }

@@ -6,7 +6,10 @@
 <mapper namespace="com.basicWeb.www.repository.BoardDAO">
 
 	<insert id="register">
-		insert into board (title, writer, content)
-		values (#{title}, #{writer}, #{content})
+		INSERT INTO board title, writer, content)
+		VALUES (#{title}, #{writer}, #{content})
 	</insert>
+	<select id="getList" resultType="com.basicWeb.www.domain.BoardVO">
+		SELECT * FROM board ORDER BY bno desc
+	</select>
 </mapper>
