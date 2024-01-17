@@ -6,7 +6,7 @@
 <mapper namespace="com.basicWeb.www.repository.BoardDAO">
 
 	<insert id="register">
-		INSERT INTO board title, writer, content)
+		INSERT INTO board (title, writer, content)
 		VALUES (#{title}, #{writer}, #{content})
 	</insert>
 	<select id="getList" resultType="com.basicWeb.www.domain.BoardVO">
@@ -16,4 +16,22 @@
 	<select id="getDetail" resultType="com.basicWeb.www.domain.BoardVO">
 		SELECT * FROM board WHERE bno = #{bno}
 	</select>
+	
+	<update id="update">
+		UPDATE board SET 
+		title = #{title}, 
+		content = #{content}, 
+		mod_at = now()
+		WHERE bno = #{bno}
+	</update>
+	
+	<update id="upReadCount">
+		UPDATE board SET 
+		read_count = read_count + #{count}
+		WHERE bno = #{bno}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM board WHERE bno = #{bno}
+	</delete>
 </mapper>

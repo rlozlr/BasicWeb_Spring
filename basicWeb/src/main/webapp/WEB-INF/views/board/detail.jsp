@@ -15,7 +15,7 @@
 	</div>
 	<div class="mb-3">
 		<label for="writer" class="form-label">작성자</label>
-		<input type="text" name="writer" class="form-control" id="writer" readonly	value="${bvo.writer }">
+		<input type="text" name="writer" class="form-control" id="writer" readonly value="${bvo.writer }">
 	</div>
 	<div class="mb-3">
 		<label for="reg_date" class="form-label">작성일</label> 
