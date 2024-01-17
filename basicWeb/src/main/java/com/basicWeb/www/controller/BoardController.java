@@ -39,7 +39,7 @@ public class BoardController {
 	public void list (Model m, PagingVO pgvo) {
 		log.info(">>> pgvo >>> {}", pgvo);
 		List<BoardVO> list = bsv.getList(pgvo);
-		int totalCount = bsv.totalCount();
+		int totalCount = bsv.totalCount(pgvo);
 		PagingHandler ph = new PagingHandler(pgvo, totalCount);
 		m.addAttribute("list", list);
 		m.addAttribute("ph", ph);

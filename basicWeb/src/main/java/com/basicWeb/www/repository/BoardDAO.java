@@ -22,6 +22,6 @@ public interface BoardDAO {
 
 	void upReadCount(@Param("bno") long bno, @Param("count") int count);
 
-	int totalCount();
+	int totalCount(PagingVO pgvo);
 
 }

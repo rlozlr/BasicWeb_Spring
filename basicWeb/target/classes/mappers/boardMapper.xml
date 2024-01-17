@@ -9,10 +9,17 @@
 		INSERT INTO board (title, writer, content)
 		VALUES (#{title}, #{writer}, #{content})
 	</insert>
+	
 	<select id="getList" resultType="com.basicWeb.www.domain.BoardVO">
 		SELECT * FROM board
+		<include refid="search"></include>
 		ORDER BY bno desc
 		LIMIT #{startPage}, #{qty}
+	</select>
+	
+	<select id="totalCount" resultType="int">
+		SELECT COUNT(bno) FROM board
+		<include refid="search"></include>
 	</select>
 	
 	<select id="getDetail" resultType="com.basicWeb.www.domain.BoardVO">
@@ -38,7 +45,26 @@
 		DELETE FROM board WHERE bno = #{bno}
 	</delete>
 	
-	<select id="totalCount" resultType="int">
-		SELECT COUNT(bno) FROM board
-	</select>
+	
+	<sql id="search">
+		<if test="type != null">
+			<trim prefix="WHERE (" suffix=")" prefixOverrides="or">
+				<foreach collection="typeToArray" item="type">
+					<trim prefix="or">
+						<choose>
+							<when test="type == 't'.toString()">
+								title like concat('%',#{keyword}, '%')
+							</when>
+							<when test="type == 'w'.toString()">
+								writer like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'c'.toString()">
+								content like concat('%', #{keyword}, '%')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+	</sql>
 </mapper>
