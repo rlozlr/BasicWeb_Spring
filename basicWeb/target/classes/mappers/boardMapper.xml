@@ -10,11 +10,14 @@
 		VALUES (#{title}, #{writer}, #{content})
 	</insert>
 	<select id="getList" resultType="com.basicWeb.www.domain.BoardVO">
-		SELECT * FROM board ORDER BY bno desc
+		SELECT * FROM board
+		ORDER BY bno desc
+		LIMIT #{startPage}, #{qty}
 	</select>
 	
 	<select id="getDetail" resultType="com.basicWeb.www.domain.BoardVO">
-		SELECT * FROM board WHERE bno = #{bno}
+		SELECT * FROM board 
+		WHERE bno = #{bno}
 	</select>
 	
 	<update id="update">
@@ -34,4 +37,8 @@
 	<delete id="delete">
 		DELETE FROM board WHERE bno = #{bno}
 	</delete>
+	
+	<select id="totalCount" resultType="int">
+		SELECT COUNT(bno) FROM board
+	</select>
 </mapper>

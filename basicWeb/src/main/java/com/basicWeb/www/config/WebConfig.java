@@ -43,7 +43,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	//multipartConfig 추후 설정
 //	@Override
 //	protected void customizeRegistration(Dynamic registration) {
-//		super.customizeRegistration(registration);
+//	
 //	}
 	
 	
