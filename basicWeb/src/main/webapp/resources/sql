@@ -26,3 +26,14 @@ cmt_qty INT DEFAULT 0,
 has_file INT DEFAULT 0,
 PRIMARY KEY(bno)
 );
+
+-- 2024-01-18
+CREATE TABLE comment (
+cno BIGINT auto_increment,
+bno BIGINT NOT NULL,
+writer VARCHAR(100) NOT NULL,
+content TEXT NOT NULL,
+reg_at DATETIME DEFAULT now(),
+mod_at DATETIME DEFAULT now(),
+PRIMARY KEY(cno)
+);
