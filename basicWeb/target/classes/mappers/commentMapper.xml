@@ -5,4 +5,14 @@
 
 <mapper namespace="com.basicWeb.www.repository.CommentDAO">
 
+	<insert id="insert">
+		INSERT INTO comment (bno, writer, content)
+		VALUES (#{bno}, #{writer}, #{content})
+	</insert>
+	
+	<select id="getList" resultType="com.basicWeb.www.domain.CommentVO">
+		SELECT * FROM comment
+		WHERE bno = #{bno}
+		ORDER BY cno DESC
+	</select>
 </mapper>

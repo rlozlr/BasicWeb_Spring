@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @Setter
 @Getter
-public class commentVO {
+public class CommentVO {
 
 	private long cno;
 	private long bno;

@@ -33,8 +33,31 @@
 	<a href="/board/modify?bno=${bvo.bno }"><button type="submit" class="btn btn-success">수정</button></a> 
 	<a href="/board/remove?bno=${bvo.bno }"><button type="button" class="btn btn-danger">삭제</button></a> 
 	<a href="/board/list"><button type="submit" class="btn btn-primary">목록</button></a><br>
+	<br><hr>
+	<!-- 댓글 등록 라인 -->
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="cmtWriter">Writer</span> 
+		<input type="text" class="form-control" id="cmtText" aria-label="Amount (to the nearest dollar)">
+		<button type="button" class="btn btn-success" id="cmtPostBtn">등록</button>
+	</div>
+
+	<!-- 댓글 표시 라인 -->
+	<ul class="list-group list-group-flush" id="cmtListArea">
+		<li class="list-group-item">
+			<div class="mb-3">
+				<div class="fw-bold">Writer <span class="badge rounded-pill text-bg-warning">modAt</span></div>
+				content
+			</div>
+		</li>
+	</ul>
 </div>
 
-
-
+<script type="text/javascript">
+	 let bnoVal = `<c:out value="${bvo.bno}"/>`;
+	 console.log(bnoVal);
+</script>
+<script src="/resources/js/boardComment.js"></script>
+<script type="text/javascript">
+	spreadCommentList(bnoVal);
+</script>
 <jsp:include page="../layout/footer.jsp"></jsp:include>
