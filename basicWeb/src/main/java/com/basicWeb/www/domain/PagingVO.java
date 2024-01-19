@@ -26,7 +26,7 @@ public class PagingVO {
 	}
 	
 	public int getStartPage() {
-		return (this.pageNo-1) * 10;
+		return (this.pageNo-1) * qty;
 	}
 	
 	public String[] getTypeToArray() {

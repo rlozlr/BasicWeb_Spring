@@ -36,15 +36,9 @@
 		<input type="text" name="content" class="form-control" 
 			id="content" readonly value="${bvo.content }">
 	</div>
-	<a href="/board/modify?bno=${bvo.bno }">
-		<button type="submit" class="btn btn-success">수정</button>
-	</a> 
-	<a href="/board/remove?bno=${bvo.bno }">
-		<button type="button" class="btn btn-danger">삭제</button>
-	</a> 
-	<a href="/board/list">
-		<button type="submit" class="btn btn-primary">목록</button>
-	</a>
+	<a href="/board/modify?bno=${bvo.bno }"><button type="submit" class="btn btn-success">수정</button></a> 
+	<a href="/board/remove?bno=${bvo.bno }"><button type="button" class="btn btn-danger">삭제</button></a> 
+	<a href="/board/list"><button type="submit" class="btn btn-primary">목록</button></a>
 	<br><br><hr>
 	
 	<!-- 댓글 등록 라인 -->
@@ -67,9 +61,29 @@
 		<!-- 댓글 더보기 버튼 -->
 	<div>
 		<button type="button" id="moreBtn" data-page="1"
-			class="btn btn-outline-dark" style="visibility: hidden">댓글 더보기</button>
+			class="btn btn-outline-dark" style="visibility:hidden">댓글 더보기</button>
 	</div>
-
+	
+	<!-- 모달창 라인 -->
+	<div class="modal" id="myModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Writer</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="cmtModText">
+						<button type="button" class="btn btn-primary" id="cmtModBtn">등록</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript">

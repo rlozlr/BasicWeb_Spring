@@ -33,4 +33,16 @@ public class CommentServiceImpl implements CommentService {
 		return ph;
 	}
 
+	@Override
+	public int edit(CommentVO cvo) {
+		// TODO Auto-generated method stub
+		return cdao.update(cvo);
+	}
+
+	@Override
+	public void remove(long cno) {
+		// TODO Auto-generated method stub
+		cdao.delete(cno);
+	}
+
 }

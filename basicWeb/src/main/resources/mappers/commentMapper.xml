@@ -19,5 +19,23 @@
 	
 	<select id="totalCount" resultType="int">
 		SELECT COUNT(cno) FROM comment
+		WHERE bno = #{bno}
 	</select>
+	
+	<update id="update">
+	    UPDATE comment SET
+	    content = #{content},
+	    mod_at = now()
+	    WHERE cno = #{cno}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM comment
+		WHERE cno = #{cno}
+	</delete>
+	
+	<delete id="deleteAll">
+		DELETE FROM comment
+		WHERE bno = #{bno}
+	</delete>
 </mapper>

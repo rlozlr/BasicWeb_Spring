@@ -1,13 +1,13 @@
 package com.basicWeb.www.controller;
 
-import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,7 +41,22 @@ public class CommentController {
 		log.info(">>> bno >>> " + bno + "/ >>> page >>> " + page);
 		PagingVO pgvo = new PagingVO(page, 5);
 		PagingHandler ph = csv.getList(bno, pgvo);
-		
+		log.info(">>>ph>>>"+ph);
 		return new ResponseEntity<PagingHandler>(ph, HttpStatus.OK);
+	}
+	
+	@PutMapping(value = "/edit", consumes = "application/json", produces = MediaType.TEXT_PLAIN_VALUE)
+	public ResponseEntity<String> edit(@RequestBody CommentVO cvo) {
+		int isOk = csv.edit(cvo);
+		return isOk > 0 ?
+				new ResponseEntity<String>("1", HttpStatus.OK) :
+					new ResponseEntity<String>("0", HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@DeleteMapping(value = "/remove/{cno}", produces = MediaType.TEXT_PLAIN_VALUE)
+	public ResponseEntity<String> remove(@PathVariable("cno") long cno) {
+		log.info(">>> cno >>> " + cno);
+		csv.remove(cno);
+		return new ResponseEntity<String>("1", HttpStatus.OK);
 	}
 }

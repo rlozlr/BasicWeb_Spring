@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.basicWeb.www.domain.BoardVO;
 import com.basicWeb.www.domain.PagingVO;
 import com.basicWeb.www.repository.BoardDAO;
+import com.basicWeb.www.repository.CommentDAO;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 public class BoardServiceImpl implements BoardService{
 
 	private final BoardDAO bdao;
+	private final CommentDAO cdao;
 
 	@Override
 	public void register(BoardVO bvo) {
@@ -46,8 +48,8 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public void remove(BoardVO bvo) {
-		bdao.delete(bvo);
-		
+		cdao.deleteAll(bvo);
+		bdao.delete(bvo);	
 	}
 
 	@Override
@@ -55,4 +57,5 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return bdao.totalCount(pgvo);
 	}
+	
 }
