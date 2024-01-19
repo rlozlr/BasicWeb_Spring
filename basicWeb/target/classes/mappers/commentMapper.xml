@@ -14,5 +14,10 @@
 		SELECT * FROM comment
 		WHERE bno = #{bno}
 		ORDER BY cno DESC
+		LIMIT #{pgvo.startPage}, #{pgvo.qty}
+	</select>
+	
+	<select id="totalCount" resultType="int">
+		SELECT COUNT(cno) FROM comment
 	</select>
 </mapper>

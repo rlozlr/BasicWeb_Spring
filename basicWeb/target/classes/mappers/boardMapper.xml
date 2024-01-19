@@ -41,6 +41,13 @@
 		WHERE bno = #{bno}
 	</update>
 	
+	<update id="getCmtCount">
+		UPDATE board b SET cmt_qty = (
+		SELECT COUNT(bno) FROM comment
+		WHERE bno = b.bno
+		)
+	</update>
+	
 	<delete id="delete">
 		DELETE FROM board WHERE bno = #{bno}
 	</delete>

@@ -7,33 +7,46 @@
 <div class="container-md">
 	<div class="mb-3">
 		<label for="bno" class="form-label">No.</label> 
-		<input type="text" name="bno" class="form-control" id="bno" readonly value="${bvo.bno }">
+		<input type="text" name="bno" class="form-control" 
+			id="bno" readonly value="${bvo.bno }">
 	</div>
 	<div class="mb-3">
 		<label for="title" class="form-label">제목</label>
-		<input type="text" name="title" class="form-control" id="title" readonly value="${bvo.title }">
+		<input type="text" name="title" class="form-control" 
+			id="title" readonly value="${bvo.title }">
 	</div>
 	<div class="mb-3">
 		<label for="writer" class="form-label">작성자</label>
-		<input type="text" name="writer" class="form-control" id="writer" readonly value="${bvo.writer }">
+		<input type="text" name="writer" class="form-control" 
+			id="writer" readonly value="${bvo.writer }">
 	</div>
 	<div class="mb-3">
 		<label for="reg_date" class="form-label">작성일</label> 
 		<span class="badge text-bg-primary">${bvo.readCount }</span> 
-		<input type="text" name="reg_date" class="form-control" id="reg_date" readonly value="${bvo.regAt }">
+		<input type="text" name="reg_date" class="form-control" 
+			id="reg_date" readonly value="${bvo.regAt }">
 	</div>
 	<div class="mb-3">
 		<label for="mod_date" class="form-label">수정일</label> 
-		<input type="text" name="mod_date" class="form-control" id="mod_date" readonly value="${bvo.modAt }">
+		<input type="text" name="mod_date" class="form-control" 
+			id="mod_date" readonly value="${bvo.modAt }">
 	</div>
 	<div class="mb-3">
 		<label for="content" class="form-label">내용</label>
-		<input type="text" name="content" class="form-control" id="content" readonly value="${bvo.content }">
+		<input type="text" name="content" class="form-control" 
+			id="content" readonly value="${bvo.content }">
 	</div>
-	<a href="/board/modify?bno=${bvo.bno }"><button type="submit" class="btn btn-success">수정</button></a> 
-	<a href="/board/remove?bno=${bvo.bno }"><button type="button" class="btn btn-danger">삭제</button></a> 
-	<a href="/board/list"><button type="submit" class="btn btn-primary">목록</button></a><br>
-	<br><hr>
+	<a href="/board/modify?bno=${bvo.bno }">
+		<button type="submit" class="btn btn-success">수정</button>
+	</a> 
+	<a href="/board/remove?bno=${bvo.bno }">
+		<button type="button" class="btn btn-danger">삭제</button>
+	</a> 
+	<a href="/board/list">
+		<button type="submit" class="btn btn-primary">목록</button>
+	</a>
+	<br><br><hr>
+	
 	<!-- 댓글 등록 라인 -->
 	<div class="input-group mb-3">
 		<span class="input-group-text" id="cmtWriter">Writer</span> 
@@ -45,11 +58,18 @@
 	<ul class="list-group list-group-flush" id="cmtListArea">
 		<li class="list-group-item">
 			<div class="mb-3">
-				<div class="fw-bold">Writer <span class="badge rounded-pill text-bg-warning">modAt</span></div>
+				<div class="fw-bold">Writer <span class="badge rounded-pill text-bg-warning">댓글등록일</span></div>
 				content
 			</div>
 		</li>
 	</ul>
+	
+		<!-- 댓글 더보기 버튼 -->
+	<div>
+		<button type="button" id="moreBtn" data-page="1"
+			class="btn btn-outline-dark" style="visibility: hidden">댓글 더보기</button>
+	</div>
+
 </div>
 
 <script type="text/javascript">
