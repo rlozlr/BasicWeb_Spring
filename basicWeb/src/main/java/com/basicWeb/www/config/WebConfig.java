@@ -1,6 +1,7 @@
 package com.basicWeb.www.config;
 
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -40,11 +41,18 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	/* 사용자 지정 Exception 처리 지정
 	 * -> 404와 같은 Exception 처리 페이지 꾸미기 -> 나중에 설정
 	 */
-	//multipartConfig 추후 설정
-//	@Override
-//	protected void customizeRegistration(Dynamic registration) {
-//	
-//	}
+	@Override
+	protected void customizeRegistration(Dynamic registration) {
+		String uploadLocation = "D:\\anzy\\_myProject\\_java\\_fileUpload";
+		int maxFileSize = 1024 * 1024 * 20;
+		int maxReSize = maxFileSize*2;
+		int fileSizeThreshold = maxFileSize;
+		
+		MultipartConfigElement multipartConfig =
+				new MultipartConfigElement(uploadLocation, maxFileSize, maxReSize, fileSizeThreshold);
+		
+		registration.setMultipartConfig(multipartConfig);
+	}
 	
 	
 
