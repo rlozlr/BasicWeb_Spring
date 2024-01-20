@@ -23,6 +23,20 @@
 		</div>
 		<button type="submit" class="btn btn-primary">등록</button>
 		<a href="/"><button type="button" class="btn btn-danger">취소</button></a>
+		
+		<!-- file 입력 라인 추가 -->
+ 		<div class="mb-3">
+			<label for="file" class="form-label">파일 업로드</label> 
+			<input type="file" name="files" class="form-control" id="files" multiple="multiple" style="display: none"><br>
+			<!-- 파일 버튼 트리거 사용하기 위해서 주는 버튼 -->
+			<button type="button" class="btn btn-primary" id="trigger">파일 업로드</button>
+		</div>
+
+		<!-- 파일 목록 표시라인 -->
+ 		<div class="mb-3" id="fileZone">
+ 			
+		</div>
+		
 	</form>
 </div>
 

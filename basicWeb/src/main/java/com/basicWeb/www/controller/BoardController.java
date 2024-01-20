@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.basicWeb.www.domain.BoardVO;
+import com.basicWeb.www.domain.FileVO;
 import com.basicWeb.www.domain.PagingVO;
 import com.basicWeb.www.handler.PagingHandler;
 import com.basicWeb.www.service.BoardService;
