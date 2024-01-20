@@ -6,7 +6,7 @@
 <h2>글쓰기</h2>
 <hr>
 <div class="container-md">
-	<form action="/board/register" method="post">
+	<form action="/board/register" method="post" enctype="multipart/form-data">
 		<div class="mb-3">
 			<label for="title" class="form-label">제목</label> 
 			<input
@@ -21,12 +21,9 @@
 			<label for="content" class="form-label">내용</label>
 			<textarea name="content" class="form-control" id="content" rows="3"></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">등록</button>
-		<a href="/"><button type="button" class="btn btn-danger">취소</button></a>
 		
 		<!-- file 입력 라인 추가 -->
  		<div class="mb-3">
-			<label for="file" class="form-label">파일 업로드</label> 
 			<input type="file" name="files" class="form-control" id="files" multiple="multiple" style="display: none"><br>
 			<!-- 파일 버튼 트리거 사용하기 위해서 주는 버튼 -->
 			<button type="button" class="btn btn-primary" id="trigger">파일 업로드</button>
@@ -36,8 +33,10 @@
  		<div class="mb-3" id="fileZone">
  			
 		</div>
+		<button type="submit" class="btn btn-primary" id="regBtn">등록</button>
+		<a href="/"><button type="button" class="btn btn-danger">취소</button></a>
 		
 	</form>
 </div>
-
+<script src="/resources/js/boardFile.js"></script>
 <jsp:include page="../layout/footer.jsp"></jsp:include>

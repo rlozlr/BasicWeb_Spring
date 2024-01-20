@@ -10,7 +10,7 @@ import com.basicWeb.www.domain.PagingVO;
 
 public interface BoardDAO {
 
-	void register(BoardVO bvo);
+	int register(BoardVO bvo);
 
 	List<BoardVO> getList(PagingVO pgvo);
 
@@ -25,5 +25,7 @@ public interface BoardDAO {
 	int totalCount(PagingVO pgvo);
 
 	void getCmtCount();
+
+	long selectOneBno();
 
 }

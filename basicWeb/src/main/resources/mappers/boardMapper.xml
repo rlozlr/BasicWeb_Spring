@@ -52,6 +52,10 @@
 		DELETE FROM board WHERE bno = #{bno}
 	</delete>
 	
+	<select id="selectOneBno" resultType="long">
+		SELECT MAX(bno) FROM board
+	</select>
+	
 	
 	<sql id="search">
 		<if test="type != null">
