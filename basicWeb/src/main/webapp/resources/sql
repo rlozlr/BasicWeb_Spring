@@ -1,5 +1,4 @@
 -- 2024-01-16
-
 # User 생성 / DB 생성
 -- root 계정으로 DB 생성, User 생성
 -- DB 생성 구문
@@ -36,4 +35,16 @@ content TEXT NOT NULL,
 reg_at DATETIME DEFAULT now(),
 mod_at DATETIME DEFAULT now(),
 PRIMARY KEY(cno)
+);
+
+-- 2024-01-19
+CREATE TABLE file(
+uuid VARCHAR(256) NOT NULL,
+save_dir VARCHAR(256) NOT NULL,
+file_name VARCHAR(256) NOT NULL,
+file_type TINYINT(1) DEFAULT 0,
+bno BIGINT,
+file_size BIGINT,
+reg_at DATETIME DEFAULT now(),
+PRIMARY KEY(uuid)
 );

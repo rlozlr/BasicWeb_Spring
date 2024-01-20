@@ -43,9 +43,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	 */
 	@Override
 	protected void customizeRegistration(Dynamic registration) {
-		String uploadLocation = "D:\\anzy\\_myProject\\_java\\_fileUpload";
+		//String uploadLocation = "D:\\anzy\\_myProject\\_java\\_fileUpload";
+		String uploadLocation = "D:\\_basicProject\\_fileUpload";
 		int maxFileSize = 1024 * 1024 * 20;
-		int maxReSize = maxFileSize*2;
+		int maxReSize = maxFileSize * 2;
 		int fileSizeThreshold = maxFileSize;
 		
 		MultipartConfigElement multipartConfig =

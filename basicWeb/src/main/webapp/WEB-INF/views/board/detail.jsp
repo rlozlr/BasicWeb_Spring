@@ -36,6 +36,48 @@
 		<input type="text" name="content" class="form-control" 
 			id="content" readonly value="${bvo.content }">
 	</div>
+	
+	<!-- file line -->
+	<c:set value="${bdto.flist }" var="flist"></c:set>
+		<div class="col-12">
+			<label for="f" class="form-label"></label>
+			<ul class="list-group list-group-flush">
+				<c:forEach items="${flist }" var="fvo">
+					<li class="list-group-item">
+						<c:choose>
+							<c:when test="${fvo.fileType == 1 }">
+								<div>
+									<img alt="" src="/upload/${fvo.saveDir }/${fvo.uuid}_th_${fvo.fileName}">
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div>
+									<!-- 일반 파일을 표시할 아이콘 -->
+									<a href="/upload/${fvo.saveDir }/${fvo.uuid}_${fvo.fileName}" download="${fvo.fileName }">
+									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-arrow-down" viewBox="0 0 16 16">
+  <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293V6.5z"/>
+  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+</svg>
+									</a>
+								</div>
+							</c:otherwise>
+						</c:choose>
+						<div class="ms-2 me-auto">
+							<div class="fw-bold">
+								${fvo.fileName}<br>
+								<span class="badge rounded-pill text-bg-secondary">${fvo.fileSize }Byte</span>
+							</div>
+						</div>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+	
+	
+	
+	
+	
+	
 	<a href="/board/modify?bno=${bvo.bno }"><button type="submit" class="btn btn-success">수정</button></a> 
 	<a href="/board/remove?bno=${bvo.bno }"><button type="button" class="btn btn-danger">삭제</button></a> 
 	<a href="/board/list"><button type="submit" class="btn btn-primary">목록</button></a>
