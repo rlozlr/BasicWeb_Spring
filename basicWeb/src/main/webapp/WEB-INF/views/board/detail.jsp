@@ -5,6 +5,7 @@
 <jsp:include page="../layout/nav.jsp"></jsp:include>
 
 <div class="container-md">
+<c:set value="${bdto.bvo }" var="bvo"></c:set>
 	<div class="mb-3">
 		<label for="bno" class="form-label">No.</label> 
 		<input type="text" name="bno" class="form-control" 
@@ -37,7 +38,7 @@
 			id="content" readonly value="${bvo.content }">
 	</div>
 	
-	<!-- file line -->
+	<!-- 파일 line -->
 	<c:set value="${bdto.flist }" var="flist"></c:set>
 		<div class="col-12">
 			<label for="f" class="form-label"></label>
@@ -72,11 +73,6 @@
 				</c:forEach>
 			</ul>
 		</div>
-	
-	
-	
-	
-	
 	
 	<a href="/board/modify?bno=${bvo.bno }"><button type="submit" class="btn btn-success">수정</button></a> 
 	<a href="/board/remove?bno=${bvo.bno }"><button type="button" class="btn btn-danger">삭제</button></a> 

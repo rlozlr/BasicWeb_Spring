@@ -20,7 +20,7 @@ public interface BoardDAO {
 
 	void delete(BoardVO bvo);
 
-	void upReadCount(@Param("bno") long bno, @Param("count") int count);
+	int upReadCount(@Param("bno") long bno, @Param("count") int count);
 
 	int totalCount(PagingVO pgvo);
 

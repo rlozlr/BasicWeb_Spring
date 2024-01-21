@@ -8,5 +8,16 @@
 		INSERT INTO file (uuid, save_dir, file_name, file_type, bno, file_size)
 		VALUES (#{uuid}, #{saveDir}, #{fileName}, #{fileType}, #{bno}, #{fileSize})
 	</insert>
-
+	
+	<select id="getFileList" resultType="com.basicWeb.www.domain.FileVO">
+		SELECT * FROM file WHERE bno = #{bno}
+	</select>
+	
+	<delete id="deleteFile">
+		DELETE FROM file WHERE uuid = #{uuid}
+	</delete>
+	
+	<delete id="deleteAll">
+		DELETE FROM file WHERE bno = #{bno}
+	</delete>
 </mapper>
