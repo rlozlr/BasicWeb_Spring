@@ -16,7 +16,7 @@ public interface BoardDAO {
 
 	BoardVO getDetail(long bno);
 
-	void update(BoardVO bvo);
+	int update(BoardVO bvo);
 
 	void delete(BoardVO bvo);
 

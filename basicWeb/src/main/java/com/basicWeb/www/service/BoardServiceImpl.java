@@ -63,8 +63,8 @@ public class BoardServiceImpl implements BoardService{
 	@Transactional
 	@Override
 	public int modify(BoardDTO bdto) {
-		int isOk = bdao.upReadCount(bdto.getBvo().getBno(), -2);
-		
+		bdao.upReadCount(bdto.getBvo().getBno(), -2);
+		int isOk = bdao.update(bdto.getBvo());
 		if(bdto.getFlist() == null) {
 			return isOk;
 		}
@@ -76,7 +76,6 @@ public class BoardServiceImpl implements BoardService{
 			}
 		}
 		return isOk;
-		
 	}
 
 	@Override

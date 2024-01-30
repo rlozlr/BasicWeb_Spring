@@ -1,5 +1,6 @@
 console.log('boardComment.js in~!!');
 console.log(bnoVal);
+console.log(userEmail);
 
 document.getElementById('cmtPostBtn').addEventListener('click',()=>{
     const cmtText = document.getElementById('cmtText');
@@ -10,7 +11,7 @@ document.getElementById('cmtPostBtn').addEventListener('click',()=>{
     } else {
         let cmtData = {
             bno : bnoVal,
-            writer : document.getElementById('cmtWriter').innerHTML,
+            writer : userEmail,
             content : cmtText.value
         };
         console.log(cmtData);
@@ -71,8 +72,10 @@ function spreadCommentList(bno, page=1) {
                 li += `<span class="badge rounded-pill text-bg-warning">${cvo.regAt}</span></div>`;
                 li += `${cvo.content}`;
                 li += `</div>`;
-                li += `<button type="button" class="btn btn-sm btn-outline-success cmtModBtn" data-bs-toggle="modal" data-bs-target="#myModal">수정</button>`;
-                li += `<button type="button" class="btn btn-sm btn-outline-danger cmtDelBtn">삭제</button>`;
+                if (cvo.writer == userEmail) {
+                    li += `<button type="button" class="btn btn-sm btn-outline-success cmtModBtn" data-bs-toggle="modal" data-bs-target="#myModal">수정</button>`;
+                    li += `<button type="button" class="btn btn-sm btn-outline-danger cmtDelBtn">삭제</button>`;
+                }
                 li += `</li>`;
                 ul.innerHTML += li;
             }   
