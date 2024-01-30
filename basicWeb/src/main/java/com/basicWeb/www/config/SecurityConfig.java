@@ -64,11 +64,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// authenticated() : 인증된 사용자만 가능
 		http.authorizeRequests()
 		.antMatchers("/member/list").hasRole("ADMIN")
-		.antMatchers("/", "/board/list", "/board/detail", "/comment/**", "/upload/**", "/resources/**", "/member/register", "/member/login").permitAll()
+		.antMatchers("/", "/board/list", "/board/detail", "/comment/**", 
+				"/upload/**", "/resources/**", "/member/register", "/member/login").permitAll()
 		.anyRequest().authenticated();
 
 		// 커스텀 로그인 페이지를 구성
-		// Controller에 주소요청 맵ㅁ핑이 같이 있어야 함. (필수)
+		// Controller에 주소요청 맵핑이 같이 있어야 함. (필수)
 		http.formLogin()
 		.usernameParameter("email")
 		.passwordParameter("pwd")

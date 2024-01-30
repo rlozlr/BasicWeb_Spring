@@ -6,4 +6,6 @@ public interface MemberService {
 
 	int register(MemberVO mvo);
 
+	boolean updateLastLogin(String authEmail);
+
 }

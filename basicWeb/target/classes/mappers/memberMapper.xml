@@ -13,4 +13,17 @@
 		INSERT INTO auth_member
 		VALUES (#{email}, 'ROLE_USER')
 	</insert>
+	
+	<select id="selectEmail" resultType="com.basicWeb.www.security.MemberVO">
+		SELECT * FROM member WHERE email = #{email}
+	</select>
+	
+	<select id="selectAuths" resultType="com.basicWeb.www.security.AuthVO">
+		SELECT * from auth_member WHERE email = #{email}
+	</select>
+	
+	<update id="updateLastLogin">
+		UPDATE member SET last_login = now()
+		WHERE email = #{email}
+	</update>
 </mapper>
